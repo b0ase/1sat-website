@@ -50,21 +50,20 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
 
-      <body className={`min-h-screen bg-gradient-to-br from-base-100 to-base-200 ${inter.className}`}>
+      <body className={`flex flex-col h-100vh ${inter.className}`}>
         <Spotlight
           className="-top-40 left-0 md:left-60 md:-top-20"
           fill="white"
         />
         <TanstackProvider>
           <Header ubuntu={ubuntu} />
-          <main className="flex-1">
-            {children}
-          </main>
+          {/* <Tabs className={`absolute md:relative m-0 md:my-8 bottom-0 left-0 w-full md:w-fit mx-auto ${ubuntuMono.className}`} /> */}
+          {children}
           <Analytics />
           <SpeedInsights />
           <Footer />
           <Toaster
-            position="bottom-right"
+            position="bottom-left"
             reverseOrder={false}
             toastOptions={toastProps}
           />

@@ -341,10 +341,10 @@ const TickerHeading = ({
 						{ticker.num && (
 							<div className="whitespace-nowrap items-end content-end text-right mr-4">
 								<FaHashtag className="m-0 mb-1 w-3 h-3 text-[#555]" />
-								<span className="text-xs font-medium text-base-content/60">{ticker.num}</span>
+								{ticker.num}
 							</div>
 						)}
-						<span className="token-name">{ticker.tick || ticker.sym}</span>
+						<span className="text-4xl mr-4">{ticker.tick || ticker.sym}</span>
 					</div>
 				</th>
 				<th className="w-16 text-center">
@@ -355,36 +355,36 @@ const TickerHeading = ({
 					/>
 				</th>
 				{currencyDisplay.value === CurrencyDisplay.BSV && (
-					<th className="table-price">
+					<th>
 						{ticker.price?.toLocaleString("en-US", {
 							minimumFractionDigits: 0,
 							maximumFractionDigits: 8,
 							useGrouping: false,
 						}) || ""}{" "}
-						<span className="table-secondary">sat/token</span>
+						<span className="text-accent">sat/token</span>
 					</th>
 				)}
 				{currencyDisplay.value === CurrencyDisplay.USD && (
-					<th className="table-price">
+					<th>
 						{usdPrice.value.toLocaleString("en-US", {
 							style: "currency",
 							currency: "USD",
 							minimumFractionDigits: 0,
 							maximumFractionDigits: 8,
 						})}
-						<span className="table-secondary">/token</span>
+						<span className="text-accent">/token</span>
 					</th>
 				)}
 				<th>
 					<span
-						className={`ml-2 table-text-md ${
+						className={`ml-2 text-xl ${
 							ticker.pctChange > 0 ? "text-emerald-400" : "text-orange-700"
 						}`}
 					>
 						{change}
 					</span>
 				</th>
-				<th className="w-full text-right table-price">
+				<th className="w-full text-right">
 					{currencyDisplay.value === CurrencyDisplay.BSV
 						? `${
 								ticker.marketCap > 0
@@ -426,7 +426,7 @@ const TickerHeading = ({
 						)}
 					</th>
 				)}
-				<th className="break-normal text-right w-48 hover:text-info transition text-sm font-medium">
+				<th className="break-normal text-right w-48 hover:text-info transition">
 					<Link href={`/holders/${type}/${ticker.tick || ticker.id}`}>
 						{(ticker.accounts || 0).toLocaleString()}
 					</Link>

@@ -10,7 +10,7 @@ interface TokenListingsProps {
 const TokenListings: React.FC<TokenListingsProps> = async ({ type }) => {
 	return (
 		<div className="w-full">
-			<table className="table font-sans">
+			<table className="table font-mono">
 				<thead>
 					<tr className="text-sm font-semibold">
 						<th className="min-w-16">Ticker</th>

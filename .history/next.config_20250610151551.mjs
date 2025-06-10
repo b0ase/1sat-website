@@ -37,12 +37,6 @@ const nextConfig = {
 				port: "",
 				pathname: "/**",
 			},
-			{
-				protocol: "https",
-				hostname: "cloud.handcash.io",
-				port: "",
-				pathname: "/**",
-			},
 		],
 	},
 	webpack: (config, { isServer }) => {

@@ -22,20 +22,20 @@ export default function SocialLinksComponent({
 
   if (alwaysShowIcons) {
     return (
-      <div className={`flex gap-1 items-center justify-center ${className}`}>
+      <div className={`flex gap-1 items-center ${className}`}>
         {socialLinks?.twitter ? (
           <a
             href={socialLinks.twitter.startsWith('http') ? socialLinks.twitter : `https://twitter.com/${socialLinks.twitter.replace('@', '')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${linkClass} text-base-content hover:text-primary transition-colors`}
+            className={`${linkClass} text-gray-900 hover:text-black`}
             title="X (Twitter)"
           >
             <FaXTwitter className={iconSize} />
           </a>
         ) : (
           <div
-            className={`${linkClass} text-base-content/30 cursor-not-allowed`}
+            className={`${linkClass} text-gray-400 cursor-not-allowed opacity-50`}
             title="No X (Twitter) link"
           >
             <FaXTwitter className={iconSize} />
@@ -47,14 +47,14 @@ export default function SocialLinksComponent({
             href={socialLinks.website}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${linkClass} text-info hover:text-info-focus transition-colors`}
+            className={`${linkClass} text-blue-500 hover:text-blue-600`}
             title="Website"
           >
             <FaGlobe className={iconSize} />
           </a>
         ) : (
           <div
-            className={`${linkClass} text-base-content/30 cursor-not-allowed`}
+            className={`${linkClass} text-gray-400 cursor-not-allowed opacity-50`}
             title="No website link"
           >
             <FaGlobe className={iconSize} />
@@ -66,14 +66,14 @@ export default function SocialLinksComponent({
             href={socialLinks.telegram.startsWith('http') ? socialLinks.telegram : `https://t.me/${socialLinks.telegram.replace('@', '')}`}
             target="_blank"
             rel="noopener noreferrer"
-            className={`${linkClass} text-accent hover:text-accent-focus transition-colors`}
+            className={`${linkClass} text-blue-300 hover:text-blue-400`}
             title="Telegram"
           >
             <FaTelegram className={iconSize} />
           </a>
         ) : (
           <div
-            className={`${linkClass} text-base-content/30 cursor-not-allowed`}
+            className={`${linkClass} text-gray-400 cursor-not-allowed opacity-50`}
             title="No Telegram link"
           >
             <FaTelegram className={iconSize} />
@@ -94,7 +94,7 @@ export default function SocialLinksComponent({
           href={socialLinks.website}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${linkClass} text-info hover:text-info-focus transition-colors`}
+          className={`${linkClass} text-blue-500 hover:text-blue-600`}
           title="Website"
         >
           <FaGlobe className={iconSize} />
@@ -105,7 +105,7 @@ export default function SocialLinksComponent({
           href={socialLinks.twitter.startsWith('http') ? socialLinks.twitter : `https://twitter.com/${socialLinks.twitter.replace('@', '')}`}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${linkClass} text-base-content hover:text-primary transition-colors`}
+          className={`${linkClass} text-gray-900 hover:text-black`}
           title="X (Twitter)"
         >
           <FaXTwitter className={iconSize} />
@@ -116,7 +116,7 @@ export default function SocialLinksComponent({
           href={socialLinks.telegram.startsWith('http') ? socialLinks.telegram : `https://t.me/${socialLinks.telegram.replace('@', '')}`}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${linkClass} text-accent hover:text-accent-focus transition-colors`}
+          className={`${linkClass} text-blue-300 hover:text-blue-400`}
           title="Telegram"
         >
           <FaTelegram className={iconSize} />
@@ -127,7 +127,7 @@ export default function SocialLinksComponent({
           href={socialLinks.discord}
           target="_blank"
           rel="noopener noreferrer"
-          className={`${linkClass} text-secondary hover:text-secondary-focus transition-colors`}
+          className={`${linkClass} text-indigo-400 hover:text-indigo-500`}
           title="Discord"
         >
           <FaDiscord className={iconSize} />

@@ -33,7 +33,7 @@ const List = async ({ type }: { type: AssetType.BSV20 | AssetType.BSV21 }) => {
 							key={`${listing.txid}-${listing.vout}-${listing.height}`}
 						>
 							<th className="truncase text-ellipsis">
-								<span className="text-lg font-bold">{listingName(listing)}</span>
+								<span>{listingName(listing)}</span>
 							</th>
 							<td className="w-16 text-center">
 								<SocialLinksComponent
@@ -42,11 +42,11 @@ const List = async ({ type }: { type: AssetType.BSV20 | AssetType.BSV21 }) => {
 									alwaysShowIcons={true}
 								/>
 							</td>
-							<td className="text-sm font-medium">{listingAmount(listing)}</td>
-							<td className="w-full text-right text-sm font-medium">
+							<td>{listingAmount(listing)}</td>
+							<td className="w-full text-right">
 								{satsPerToken(listing)}
 							</td>
-							<td className="break-normal text-right w-96 text-sm font-medium">
+							<td className="break-normal text-right w-96">
 								{toBitcoin(
 									listing.price || "0",
 									ReturnTypes.String,

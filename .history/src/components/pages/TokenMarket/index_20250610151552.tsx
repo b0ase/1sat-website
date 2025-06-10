@@ -23,11 +23,11 @@ const TokenMarket: React.FC<TokenMarketProps> = async ({ type, id, sort, dir }) 
   if (!marketData.length) {
     return <div className="text-center">No data found</div>;
   }
-
+  
   const ticker = (marketData || []).find((t) => t.tick === id || t.id === id);
   return (
     <>
-      {!id && <div className="w-full rounded-b-box overflow-x-auto"><table className="table font-sans">
+      {!id && <div className="w-full rounded-b-box overflow-x-auto"><table className="table font-mono">
         <TableHeading type={type} sortable={true} />
         <Suspense fallback={<TokenListingSkeleton type={type}/>}>
           <List type={type} sort={sort} dir={dir} />
@@ -36,12 +36,12 @@ const TokenMarket: React.FC<TokenMarketProps> = async ({ type, id, sort, dir }) 
       {id && <>
         <Suspense fallback={<TokenListingSkeleton type={type} />}>
           <div className="overflow-x-auto w-full">
-            <table className="table font-sans">
+            <table className="table font-mono">
               <TableHeading type={type} sortable={false} />
               <List type={type} id={id} sort={sort} dir={dir} ticker={ticker} />
             </table>
           </div>
-          <Details type={type} id={id}
+          <Details type={type} id={id} 
           marketData={marketData}
            />
         </Suspense>

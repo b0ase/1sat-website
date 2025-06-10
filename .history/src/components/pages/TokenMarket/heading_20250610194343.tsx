@@ -344,7 +344,7 @@ const TickerHeading = ({
 								<span className="text-xs font-medium text-base-content/60">{ticker.num}</span>
 							</div>
 						)}
-						<span className="token-name">{ticker.tick || ticker.sym}</span>
+						<span className="text-lg font-bold mr-4">{ticker.tick || ticker.sym}</span>
 					</div>
 				</th>
 				<th className="w-16 text-center">
@@ -355,36 +355,36 @@ const TickerHeading = ({
 					/>
 				</th>
 				{currencyDisplay.value === CurrencyDisplay.BSV && (
-					<th className="table-price">
+					<th className="text-sm font-medium">
 						{ticker.price?.toLocaleString("en-US", {
 							minimumFractionDigits: 0,
 							maximumFractionDigits: 8,
 							useGrouping: false,
 						}) || ""}{" "}
-						<span className="table-secondary">sat/token</span>
+						<span className="text-xs font-normal text-accent">sat/token</span>
 					</th>
 				)}
 				{currencyDisplay.value === CurrencyDisplay.USD && (
-					<th className="table-price">
+					<th className="text-sm font-medium">
 						{usdPrice.value.toLocaleString("en-US", {
 							style: "currency",
 							currency: "USD",
 							minimumFractionDigits: 0,
 							maximumFractionDigits: 8,
 						})}
-						<span className="table-secondary">/token</span>
+						<span className="text-xs font-normal text-accent">/token</span>
 					</th>
 				)}
 				<th>
 					<span
-						className={`ml-2 table-text-md ${
+						className={`ml-2 text-sm font-semibold ${
 							ticker.pctChange > 0 ? "text-emerald-400" : "text-orange-700"
 						}`}
 					>
 						{change}
 					</span>
 				</th>
-				<th className="w-full text-right table-price">
+				<th className="w-full text-right text-sm font-medium">
 					{currencyDisplay.value === CurrencyDisplay.BSV
 						? `${
 								ticker.marketCap > 0
